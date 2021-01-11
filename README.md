@@ -14,7 +14,13 @@ O projeto utiliza as seguintes bibliotecas:
 - System.Text.Json e Newtonsoft.Json - para geração e tratamento de dados no formato json
 
 [Screenshot-1610345810.png](https://postimg.cc/vgx8Wq3H)
+
 [Screenshot-1610345837.png](https://postimg.cc/jnhpNy0S)
+
 [Screenshot-1610345842.png](https://postimg.cc/RNSFYR0G)
+
 [Screenshot-1610345850.png](https://postimg.cc/TKhPd3gD)
+
 [Screenshot-1610345854.png](https://postimg.cc/phMVJQ7f)
+
+
