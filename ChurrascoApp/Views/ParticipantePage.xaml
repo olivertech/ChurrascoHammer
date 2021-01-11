@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ChurrascoApp.Views.ParticipantePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:behaviors="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+    xmlns:prism="http://prismlibrary.com"
+    Title="{Binding Title}"
+    prism:ViewModelLocator.AutowireViewModel="True">
+
+    <ContentPage.Content>
+        <ScrollView HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never">
+
+            <StackLayout
+                Margin="20"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="Start">
+
+                <StackLayout
+                    Padding="15,2,15,2"
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Vertical"
+                    VerticalOptions="FillAndExpand">
+                    <Image
+                        Aspect="AspectFit"
+                        HorizontalOptions="CenterAndExpand"
+                        Source="logo.png"
+                        VerticalOptions="Center"
+                        WidthRequest="150" />
+                </StackLayout>
+
+                <Frame
+                    Margin="0,10,0,10"
+                    Padding="20"
+                    BackgroundColor="AliceBlue"
+                    BorderColor="DarkGray"
+                    VerticalOptions="CenterAndExpand">
+                    <FlexLayout Direction="Column">
+
+                        <StackLayout Margin="0,0,0,20" HorizontalOptions="CenterAndExpand">
+                            <Label
+                                FontSize="Medium"
+                                Text="Participante"
+                                TextColor="#123e6a" />
+                        </StackLayout>
+
+                        <StackLayout
+                            HorizontalOptions="CenterAndExpand"
+                            Orientation="Horizontal"
+                            VerticalOptions="Center">
+                            <StackLayout
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="Center"
+                                WidthRequest="50">
+                                <Image Source="ic_play_arrow_grey_600_24dp.png" />
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical">
+                                <Entry
+                                    FontSize="Medium"
+                                    HorizontalOptions="FillAndExpand"
+                                    MaxLength="10"
+                                    Placeholder="Nome Participante"
+                                    ReturnType="Next"
+                                    Text="{Binding NomeFuncionario}"
+                                    WidthRequest="300" />
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout
+                            HorizontalOptions="CenterAndExpand"
+                            Orientation="Horizontal"
+                            VerticalOptions="Center">
+                            <StackLayout
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="Center"
+                                WidthRequest="50">
+                                <Image Source="ic_play_arrow_grey_600_24dp.png" />
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical">
+                                <Entry
+                                    FontSize="Medium"
+                                    HorizontalOptions="FillAndExpand"
+                                    MaxLength="10"
+                                    Placeholder="Sobrenome Participante"
+                                    ReturnType="Next"
+                                    Text="{Binding SobrenomeFuncionario}"
+                                    WidthRequest="300" />
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout
+                            HorizontalOptions="CenterAndExpand"
+                            Orientation="Horizontal"
+                            VerticalOptions="Center">
+                            <StackLayout
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="Center"
+                                WidthRequest="50">
+                                <Image Source="ic_play_arrow_grey_600_24dp.png" />
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical">
+                                <Entry
+                                    FontSize="Medium"
+                                    HorizontalOptions="FillAndExpand"
+                                    Keyboard="Numeric"
+                                    MaxLength="2"
+                                    Placeholder="Idade Participante (&gt;=18 anos)"
+                                    ReturnType="Next"
+                                    Text="{Binding IdadeFuncionario}"
+                                    WidthRequest="300" />
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout
+                            Padding="40,20,0,0"
+                            HorizontalOptions="CenterAndExpand"
+                            Orientation="Horizontal"
+                            VerticalOptions="Center"
+                            WidthRequest="180">
+                            <Switch
+                                HorizontalOptions="Start"
+                                IsToggled="{Binding FuncionarioBebe}"
+                                ScaleX="0.8"
+                                ScaleY="0.8">
+                                <Switch.Behaviors>
+                                    <behaviors:EventToCommandBehavior CommandParameter="{Binding .}" EventName="Toggled" />
+                                </Switch.Behaviors>
+                            </Switch>
+                            <Label
+                                HorizontalOptions="EndAndExpand"
+                                Text="Você Bebe ?"
+                                VerticalOptions="Center" />
+                        </StackLayout>
+
+                    </FlexLayout>
+                </Frame>
+
+                <StackLayout
+                    Padding="100,10"
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Horizontal"
+                    VerticalOptions="Center"
+                    WidthRequest="150">
+                    <Switch
+                        HorizontalOptions="Start"
+                        IsToggled="{Binding TemConvidado}"
+                        ScaleX="0.8"
+                        ScaleY="0.8">
+                        <Switch.Behaviors>
+                            <behaviors:EventToCommandBehavior CommandParameter="{Binding .}" EventName="Toggled" />
+                        </Switch.Behaviors>
+                    </Switch>
+                    <Label
+                        HorizontalOptions="EndAndExpand"
+                        Text="Tem Convidado ?"
+                        VerticalOptions="Center" />
+                </StackLayout>
+
+                <Frame
+                    Margin="0,10,0,10"
+                    Padding="20"
+                    BackgroundColor="AliceBlue"
+                    BorderColor="DarkGray"
+                    IsVisible="{Binding TemConvidado}"
+                    VerticalOptions="CenterAndExpand">
+                    <FlexLayout Direction="Column">
+
+                        <StackLayout Margin="0,0,0,20" HorizontalOptions="CenterAndExpand">
+                            <Label
+                                FontSize="Medium"
+                                Text="Convidado"
+                                TextColor="#123e6a" />
+                        </StackLayout>
+
+                        <StackLayout
+                            HorizontalOptions="CenterAndExpand"
+                            Orientation="Horizontal"
+                            VerticalOptions="Center">
+                            <StackLayout
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="Center"
+                                WidthRequest="50">
+                                <Image Source="ic_play_arrow_grey_600_24dp.png" />
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical">
+                                <Entry
+                                    FontSize="Medium"
+                                    HorizontalOptions="FillAndExpand"
+                                    MaxLength="10"
+                                    Placeholder="Nome Convidado"
+                                    ReturnType="Next"
+                                    Text="{Binding NomeConvidado}"
+                                    WidthRequest="300" />
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout
+                            HorizontalOptions="CenterAndExpand"
+                            Orientation="Horizontal"
+                            VerticalOptions="Center">
+                            <StackLayout
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="Center"
+                                WidthRequest="50">
+                                <Image Source="ic_play_arrow_grey_600_24dp.png" />
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical">
+                                <Entry
+                                    FontSize="Medium"
+                                    HorizontalOptions="FillAndExpand"
+                                    MaxLength="10"
+                                    Placeholder="Sobrenome Convidado"
+                                    ReturnType="Next"
+                                    Text="{Binding SobrenomeConvidado}"
+                                    WidthRequest="300" />
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout
+                            HorizontalOptions="CenterAndExpand"
+                            Orientation="Horizontal"
+                            VerticalOptions="Center">
+                            <StackLayout
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="Center"
+                                WidthRequest="50">
+                                <Image Source="ic_play_arrow_grey_600_24dp.png" />
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical">
+                                <Entry
+                                    FontSize="Medium"
+                                    HorizontalOptions="FillAndExpand"
+                                    Keyboard="Numeric"
+                                    MaxLength="2"
+                                    Placeholder="Idade Convidado (&gt;=18 anos)"
+                                    ReturnType="Done"
+                                    Text="{Binding IdadeConvidado}"
+                                    WidthRequest="300" />
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout
+                            HorizontalOptions="CenterAndExpand"
+                            Orientation="Horizontal"
+                            VerticalOptions="Center">
+                            <StackLayout
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="Center"
+                                WidthRequest="50">
+                                <Image Source="ic_play_arrow_grey_600_24dp.png" />
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical">
+                                <Picker
+                                    x:Name="pckCategoria1"
+                                    Title="Sexo Convidado"
+                                    FontSize="Medium"
+                                    HorizontalOptions="FillAndExpand"
+                                    ItemsSource="{Binding Sexos}"
+                                    SelectedItem="{Binding SexoConvidado}"
+                                    WidthRequest="300" />
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout
+                            Padding="40,20,0,0"
+                            HorizontalOptions="CenterAndExpand"
+                            Orientation="Horizontal"
+                            VerticalOptions="Center"
+                            WidthRequest="220">
+                            <Switch
+                                HorizontalOptions="Start"
+                                IsToggled="{Binding ConvidadoBebe}"
+                                ScaleX="0.8"
+                                ScaleY="0.8">
+                                <Switch.Behaviors>
+                                    <behaviors:EventToCommandBehavior CommandParameter="{Binding .}" EventName="Toggled" />
+                                </Switch.Behaviors>
+                            </Switch>
+                            <Label
+                                HorizontalOptions="EndAndExpand"
+                                Text="Convidado Bebe ?"
+                                VerticalOptions="Center" />
+                        </StackLayout>
+
+                    </FlexLayout>
+                </Frame>
+
+                <StackLayout
+                    Margin="0,5"
+                    HorizontalOptions="CenterAndExpand"
+                    Orientation="Vertical"
+                    VerticalOptions="Center"
+                    WidthRequest="280">
+                    <Button
+                        BackgroundColor="#123e6a"
+                        Command="{Binding SalvarCommand}"
+                        Image="ic_group_white_18dp.png"
+                        Text="Salvar Participante"
+                        TextColor="White">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="1" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="0.8" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Button>
+                </StackLayout>
+
+                <StackLayout
+                    Margin="0,0,0,20"
+                    HorizontalOptions="CenterAndExpand"
+                    IsVisible="{Binding ShowBotaoExcluir}"
+                    Orientation="Vertical"
+                    VerticalOptions="Center"
+                    WidthRequest="280">
+                    <Button
+                        BackgroundColor="DarkRed"
+                        Command="{Binding RemoverCommand}"
+                        Image="ic_person_remove_white_18dp.png"
+                        Text="Remover Participante"
+                        TextColor="White">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="1" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="0.8" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Button>
+                </StackLayout>
+
+            </StackLayout>
+
+        </ScrollView>
+    </ContentPage.Content>
+
+</ContentPage>

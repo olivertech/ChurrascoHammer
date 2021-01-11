@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ChurrascoApp.Views.TotaisListaPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="http://prismlibrary.com"
+    Title="{Binding Title}"
+    prism:ViewModelLocator.AutowireViewModel="True">
+
+    <ContentPage.Content>
+        <ScrollView HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never">
+            <StackLayout
+                Margin="20"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="Start">
+
+                <StackLayout
+                    Padding="15,2,15,2"
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Vertical"
+                    VerticalOptions="FillAndExpand">
+                    <Image
+                        Aspect="AspectFit"
+                        HorizontalOptions="CenterAndExpand"
+                        Source="logo.png"
+                        VerticalOptions="Center"
+                        WidthRequest="150" />
+                </StackLayout>
+
+                <Frame
+                    Margin="0,20,0,10"
+                    BackgroundColor="AliceBlue"
+                    BorderColor="DarkGray">
+                    <FlexLayout Direction="Column">
+
+                        <StackLayout Margin="0,0,0,20" HorizontalOptions="CenterAndExpand">
+                            <Label
+                                FontSize="Medium"
+                                Text="Gastos com Comida"
+                                TextColor="#123e6a" />
+                        </StackLayout>
+
+                        <StackLayout
+                            HeightRequest="200"
+                            Orientation="Vertical"
+                            VerticalOptions="FillAndExpand">
+                            <ListView
+                                BackgroundColor="#d1e5f9"
+                                HorizontalScrollBarVisibility="Never"
+                                ItemsSource="{Binding GastosComidaCollection}"
+                                RowHeight="80"
+                                SeparatorColor="#0bcd6e"
+                                VerticalScrollBarVisibility="Never">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
+                                                <StackLayout
+                                                    Padding="0,30,10,0"
+                                                    HorizontalOptions="EndAndExpand"
+                                                    VerticalOptions="CenterAndExpand"
+                                                    WidthRequest="350">
+                                                    <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                                                        <StackLayout
+                                                            HorizontalOptions="EndAndExpand"
+                                                            VerticalOptions="CenterAndExpand"
+                                                            WidthRequest="50">
+                                                            <Image Source="ic_local_grocery_store_custom_18dp.png" />
+                                                        </StackLayout>
+                                                        <StackLayout
+                                                            HorizontalOptions="EndAndExpand"
+                                                            VerticalOptions="CenterAndExpand"
+                                                            WidthRequest="200">
+                                                            <Label
+                                                                FontSize="Medium"
+                                                                HorizontalOptions="StartAndExpand"
+                                                                Text="{Binding Descricao}" />
+                                                        </StackLayout>
+                                                        <StackLayout
+                                                            HorizontalOptions="EndAndExpand"
+                                                            VerticalOptions="CenterAndExpand"
+                                                            WidthRequest="120">
+                                                            <Label
+                                                                FontSize="Medium"
+                                                                HorizontalTextAlignment="End"
+                                                                Text="{Binding Valor, StringFormat='{0:C}'}" />
+                                                        </StackLayout>
+                                                    </StackLayout>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </StackLayout>
+
+                    </FlexLayout>
+                </Frame>
+
+                <StackLayout
+                    Margin="0,10"
+                    HorizontalOptions="CenterAndExpand"
+                    Orientation="Vertical"
+                    VerticalOptions="Center"
+                    WidthRequest="280">
+                    <Button
+                        BackgroundColor="#123e6a"
+                        Command="{Binding IncluirGastoComidaCommand}"
+                        Image="ic_add_shopping_cart_white_18dp.png"
+                        Text="Incluir Gasto Comida"
+                        TextColor="White">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="1" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="0.8" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Button>
+                </StackLayout>
+
+                <Frame
+                    Margin="0,10,0,10"
+                    BackgroundColor="AliceBlue"
+                    BorderColor="DarkGray">
+                    <FlexLayout Direction="Column">
+
+                        <StackLayout Margin="0,0,0,20" HorizontalOptions="CenterAndExpand">
+                            <Label
+                                FontSize="Medium"
+                                Text="Gastos com Bebida"
+                                TextColor="#123e6a" />
+                        </StackLayout>
+
+                        <StackLayout
+                            HeightRequest="200"
+                            Orientation="Vertical"
+                            VerticalOptions="FillAndExpand">
+                            <ListView
+                                BackgroundColor="#d1e5f9"
+                                HorizontalScrollBarVisibility="Never"
+                                ItemsSource="{Binding GastosBebidaCollection}"
+                                RowHeight="80"
+                                SeparatorColor="#0bcd6e"
+                                VerticalScrollBarVisibility="Never">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
+                                                <StackLayout
+                                                    Padding="0,30,10,0"
+                                                    HorizontalOptions="EndAndExpand"
+                                                    VerticalOptions="CenterAndExpand"
+                                                    WidthRequest="350">
+                                                    <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                                                        <StackLayout
+                                                            HorizontalOptions="EndAndExpand"
+                                                            VerticalOptions="CenterAndExpand"
+                                                            WidthRequest="50">
+                                                            <Image Source="ic_local_grocery_store_custom_18dp.png" />
+                                                        </StackLayout>
+                                                        <StackLayout
+                                                            HorizontalOptions="EndAndExpand"
+                                                            VerticalOptions="CenterAndExpand"
+                                                            WidthRequest="200">
+                                                            <Label
+                                                                FontSize="Medium"
+                                                                HorizontalOptions="StartAndExpand"
+                                                                Text="{Binding Descricao}" />
+                                                        </StackLayout>
+                                                        <StackLayout
+                                                            HorizontalOptions="EndAndExpand"
+                                                            VerticalOptions="CenterAndExpand"
+                                                            WidthRequest="120">
+                                                            <Label
+                                                                FontSize="Medium"
+                                                                HorizontalTextAlignment="End"
+                                                                Text="{Binding Valor, StringFormat='{0:C}'}" />
+                                                        </StackLayout>
+                                                    </StackLayout>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </StackLayout>
+
+                    </FlexLayout>
+                </Frame>
+
+                <StackLayout
+                    Margin="0,10,0,20"
+                    HorizontalOptions="CenterAndExpand"
+                    Orientation="Vertical"
+                    VerticalOptions="Center"
+                    WidthRequest="280">
+                    <Button
+                        BackgroundColor="#123e6a"
+                        Command="{Binding IncluirGastoBebidaCommand}"
+                        Image="ic_add_shopping_cart_white_18dp.png"
+                        Text="Incluir Gasto Bebida"
+                        TextColor="White">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="1" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="0.8" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Button>
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+
+</ContentPage>

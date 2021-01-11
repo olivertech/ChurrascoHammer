@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ChurrascoApp.Views.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="{Binding Title}">
+
+    <StackLayout
+        Margin="20,50"
+        HorizontalOptions="CenterAndExpand"
+        VerticalOptions="Start">
+
+        <StackLayout
+            Padding="15,2,15,2"
+            HorizontalOptions="FillAndExpand"
+            Orientation="Vertical"
+            VerticalOptions="FillAndExpand">
+            <Image
+                Aspect="AspectFit"
+                HorizontalOptions="CenterAndExpand"
+                Source="logo.png"
+                VerticalOptions="Center"
+                WidthRequest="150" />
+        </StackLayout>
+
+        <Label
+            Margin="0,25"
+            FontSize="Large"
+            HorizontalOptions="CenterAndExpand"
+            HorizontalTextAlignment="Center"
+            VerticalOptions="CenterAndExpand">
+            <Label.Text>
+                Seja Bem vindo ao &#10; Aplicativo Hammer Churrasco
+            </Label.Text>
+        </Label>
+        <Label
+            FontSize="Medium"
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="CenterAndExpand">
+            <Label.Text>
+                Selecione uma opção no menu lateral
+            </Label.Text>
+        </Label>
+    </StackLayout>
+
+</ContentPage>

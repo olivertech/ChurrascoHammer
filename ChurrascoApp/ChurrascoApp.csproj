@@ -1,0 +1,76 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Classes\CurrentStates.cs" />
+    <Compile Remove="Properties\AssemblyInfo.cs" />
+    <Compile Remove="ViewModels\ConvidadoPageViewModel.cs" />
+    <Compile Remove="ViewModels\ConvidadosPageViewModel.cs" />
+    <Compile Remove="Views\ConvidadoPage.xaml.cs" />
+    <Compile Remove="Views\ConvidadosPage.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Views\ConvidadoPage.xaml" />
+    <EmbeddedResource Remove="Views\ConvidadosPage.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Acr.UserDialogs" Version="7.1.0.470" />
+    <PackageReference Include="Bogus" Version="32.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />
+    <PackageReference Include="System.Text.Json" Version="5.0.0" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.0" />
+    <PackageReference Include="Xamarin.Forms" Version="4.7.0.1142" />
+    <PackageReference Include="Xamarin.Essentials.Interfaces" Version="1.5.3.2" />
+    <PackageReference Include="Prism.Unity.Forms" Version="7.2.0.1422" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\ChurrascosPage.xaml.cs">
+      <DependentUpon>ChurrascosPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\TotaisListaPage.xaml.cs">
+      <DependentUpon>TotaisListaPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\ChurrascoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ChurrascosPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\NavigationMenuPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ParticipantePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ParticipantesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\PrismMasterDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\TotaisInclusaoGastoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\TotaisListaPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\TotaisPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

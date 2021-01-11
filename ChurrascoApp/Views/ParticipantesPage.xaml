@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ChurrascoApp.Views.ParticipantesPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:behaviors="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+    xmlns:converters="clr-namespace:ChurrascoApp.Converters"
+    xmlns:prism="http://prismlibrary.com"
+    Title="{Binding Title}"
+    prism:ViewModelLocator.AutowireViewModel="True">
+
+    <ContentPage.Content>
+
+        <StackLayout
+            Margin="20"
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="Start">
+
+            <StackLayout
+                Padding="15,2,15,2"
+                HorizontalOptions="FillAndExpand"
+                Orientation="Vertical"
+                VerticalOptions="FillAndExpand">
+                <Image
+                    Aspect="AspectFit"
+                    HorizontalOptions="CenterAndExpand"
+                    Source="logo.png"
+                    VerticalOptions="Center"
+                    WidthRequest="150" />
+            </StackLayout>
+
+            <StackLayout
+                Margin="0,20,0,0"
+                HorizontalOptions="FillAndExpand"
+                Orientation="Horizontal"
+                VerticalOptions="FillAndExpand">
+                <Label
+                    FontSize="Medium"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="{Binding TotalParticipantes}"
+                    TextColor="#123e6a" />
+            </StackLayout>
+
+            <StackLayout
+                Margin="0,0,0,20"
+                HorizontalOptions="FillAndExpand"
+                Orientation="Horizontal"
+                VerticalOptions="FillAndExpand">
+                <Label
+                    FontSize="Medium"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="{Binding TotalConvidados}"
+                    TextColor="#0bcd6e" />
+            </StackLayout>
+
+            <StackLayout
+                Margin="0,0,0,10"
+                HorizontalOptions="FillAndExpand"
+                Orientation="Horizontal"
+                VerticalOptions="FillAndExpand">
+                <Label
+                    FontSize="Medium"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="{Binding TotalArrecadado}"
+                    TextColor="#a5a5a5" />
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+                <ListView
+                    BackgroundColor="#d1e5f9"
+                    HorizontalScrollBarVisibility="Never"
+                    ItemsSource="{Binding ParticipantesCollection}"
+                    RowHeight="130"
+                    SeparatorColor="#0bcd6e"
+                    VerticalScrollBarVisibility="Never">
+                    <ListView.Behaviors>
+                        <behaviors:EventToCommandBehavior
+                            Command="{Binding ItemTappedCommand}"
+                            EventArgsConverter="{converters:ItemTappedEventArgsConverter}"
+                            EventName="ItemTapped" />
+                    </ListView.Behaviors>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
+                                    <StackLayout
+                                        Margin="0,10"
+                                        HorizontalOptions="CenterAndExpand"
+                                        VerticalOptions="CenterAndExpand"
+                                        WidthRequest="350">
+                                        <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                                            <StackLayout
+                                                HorizontalOptions="FillAndExpand"
+                                                VerticalOptions="Center"
+                                                WidthRequest="50">
+                                                <Image Source="ic_person_custom_18dp.png" />
+                                            </StackLayout>
+                                            <StackLayout WidthRequest="400">
+                                                <Label
+                                                    FontSize="Medium"
+                                                    HorizontalOptions="StartAndExpand"
+                                                    Text="{Binding Funcionario.NomeCompleto}" />
+                                            </StackLayout>
+                                            <StackLayout HorizontalOptions="EndAndExpand" Orientation="Horizontal">
+                                                <Label
+                                                    FontSize="Medium"
+                                                    Text="{Binding Funcionario.Idade}"
+                                                    WidthRequest="170" />
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+                                    <StackLayout
+                                        Padding="70,0,0,0"
+                                        HorizontalOptions="FillAndExpand"
+                                        Orientation="Horizontal"
+                                        WidthRequest="400">
+                                        <StackLayout
+                                            HorizontalOptions="FillAndExpand"
+                                            VerticalOptions="Center"
+                                            WidthRequest="150">
+                                            <Label
+                                                FontSize="Medium"
+                                                HorizontalOptions="StartAndExpand"
+                                                Text="Convidado: "
+                                                TextColor="DarkOrange" />
+                                        </StackLayout>
+                                        <StackLayout HorizontalOptions="StartAndExpand" WidthRequest="280">
+                                            <Label
+                                                FontSize="Medium"
+                                                HorizontalOptions="StartAndExpand"
+                                                Text="{Binding Convidado.NomeCompleto}" />
+                                        </StackLayout>
+                                    </StackLayout>
+                                    <StackLayout
+                                        Padding="70,10,0,0"
+                                        HorizontalOptions="FillAndExpand"
+                                        Orientation="Horizontal"
+                                        WidthRequest="400">
+                                        <StackLayout>
+                                            <Image IsVisible="{Binding ParticipanteBebe}" Source="ic_local_drink_orange_600_18dp.png" />
+                                        </StackLayout>
+                                        <StackLayout>
+                                            <Image IsVisible="{Binding ConvidadoBebe}" Source="ic_local_drink_orange_600_18dp.png" />
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+            <StackLayout
+                Margin="0,20,0,0"
+                HorizontalOptions="CenterAndExpand"
+                Orientation="Vertical"
+                VerticalOptions="Center"
+                WidthRequest="280">
+                <Button
+                    BackgroundColor="#123e6a"
+                    Command="{Binding NovoParticipanteCommand}"
+                    Image="ic_group_add_white_18dp.png"
+                    Text="Cadastrar Novo Participante"
+                    TextColor="White">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale" Value="1" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale" Value="0.8" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </Button>
+            </StackLayout>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+
+</ContentPage>

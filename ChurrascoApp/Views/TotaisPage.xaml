@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ChurrascoApp.Views.TotaisPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="http://prismlibrary.com"
+    Title="{Binding Title}"
+    prism:ViewModelLocator.AutowireViewModel="True">
+
+    <ContentPage.Content>
+        <ScrollView HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never">
+
+            <StackLayout
+                Margin="20"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="Start">
+
+                <StackLayout
+                    Padding="15,2,15,2"
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Vertical"
+                    VerticalOptions="FillAndExpand">
+                    <Image
+                        Aspect="AspectFit"
+                        HorizontalOptions="CenterAndExpand"
+                        Source="logo.png"
+                        VerticalOptions="Center"
+                        WidthRequest="150" />
+                </StackLayout>
+
+                <Frame
+                    Margin="0,10,0,10"
+                    BackgroundColor="AliceBlue"
+                    BorderColor="DarkGray">
+                    <FlexLayout Direction="Column">
+
+                        <StackLayout Margin="0,0,0,20" HorizontalOptions="CenterAndExpand">
+                            <Label
+                                FontSize="Medium"
+                                Text="Total Arrecadado"
+                                TextColor="#123e6a" />
+                        </StackLayout>
+
+                        <StackLayout
+                            HorizontalOptions="CenterAndExpand"
+                            Orientation="Horizontal"
+                            VerticalOptions="Center">
+                            <StackLayout
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="Center"
+                                WidthRequest="50">
+                                <Image Source="ic_attach_money_grey_600_18dp.png" />
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical">
+                                <Entry
+                                    FontSize="Medium"
+                                    HorizontalOptions="FillAndExpand"
+                                    IsEnabled="False"
+                                    Keyboard="Numeric"
+                                    Placeholder="Total Arrecado"
+                                    ReturnType="Next"
+                                    Text="{Binding TotalArrecadado}"
+                                    WidthRequest="300" />
+                            </StackLayout>
+                        </StackLayout>
+
+                    </FlexLayout>
+                </Frame>
+
+                <Frame
+                    Margin="0,10,0,10"
+                    BackgroundColor="AliceBlue"
+                    BorderColor="DarkGray">
+                    <FlexLayout Direction="Column">
+
+                        <StackLayout Margin="0,0,0,20" HorizontalOptions="CenterAndExpand">
+                            <Label
+                                FontSize="Medium"
+                                Text="Total de Gastos"
+                                TextColor="#123e6a" />
+                        </StackLayout>
+
+                        <StackLayout
+                            HorizontalOptions="CenterAndExpand"
+                            Orientation="Horizontal"
+                            VerticalOptions="Center">
+                            <StackLayout
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="Center"
+                                WidthRequest="50">
+                                <Image Source="ic_fastfood_grey_600_24dp.png" />
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical">
+                                <Entry
+                                    FontSize="Medium"
+                                    HorizontalOptions="FillAndExpand"
+                                    IsEnabled="False"
+                                    Keyboard="Numeric"
+                                    Placeholder="Total de Gastos"
+                                    ReturnType="Next"
+                                    Text="{Binding TotalGastos}"
+                                    WidthRequest="300" />
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout Margin="0,20" HorizontalOptions="CenterAndExpand">
+                            <Label
+                                FontSize="Medium"
+                                Text="Total Gasto Com Comida"
+                                TextColor="#123e6a" />
+                        </StackLayout>
+
+                        <StackLayout
+                            HorizontalOptions="CenterAndExpand"
+                            Orientation="Horizontal"
+                            VerticalOptions="Center">
+                            <StackLayout
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="Center"
+                                WidthRequest="50">
+                                <Image Source="ic_fastfood_grey_600_24dp.png" />
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical">
+                                <Entry
+                                    FontSize="Medium"
+                                    HorizontalOptions="FillAndExpand"
+                                    IsEnabled="False"
+                                    Keyboard="Numeric"
+                                    Placeholder="Total de Gastos Comida"
+                                    ReturnType="Next"
+                                    Text="{Binding TotalGastoComida}"
+                                    WidthRequest="300" />
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout Margin="0,20" HorizontalOptions="CenterAndExpand">
+                            <Label
+                                FontSize="Medium"
+                                Text="Total Gasto Com Bebida"
+                                TextColor="#123e6a" />
+                        </StackLayout>
+
+                        <StackLayout
+                            HorizontalOptions="CenterAndExpand"
+                            Orientation="Horizontal"
+                            VerticalOptions="Center">
+                            <StackLayout
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="Center"
+                                WidthRequest="50">
+                                <Image Source="ic_fastfood_grey_600_24dp.png" />
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical">
+                                <Entry
+                                    FontSize="Medium"
+                                    HorizontalOptions="FillAndExpand"
+                                    IsEnabled="False"
+                                    Keyboard="Numeric"
+                                    Placeholder="Total Gastos Bebida"
+                                    ReturnType="Done"
+                                    Text="{Binding TotalGastoBebida}"
+                                    WidthRequest="300" />
+                            </StackLayout>
+                        </StackLayout>
+
+                    </FlexLayout>
+                </Frame>
+
+                <StackLayout
+                    Margin="0,20"
+                    HorizontalOptions="CenterAndExpand"
+                    Orientation="Vertical"
+                    VerticalOptions="Center"
+                    WidthRequest="280">
+                    <Button
+                        BackgroundColor="#123e6a"
+                        Command="{Binding AtualizarGastosCommand}"
+                        Image="ic_add_shopping_cart_white_18dp.png"
+                        Text="Atualizar Gastos"
+                        TextColor="White">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="1" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="0.8" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Button>
+                </StackLayout>
+
+            </StackLayout>
+
+        </ScrollView>
+    </ContentPage.Content>
+
+</ContentPage>
