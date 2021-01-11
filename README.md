@@ -12,3 +12,5 @@ O projeto utiliza as seguintes bibliotecas:
 - Bogun - gerador de dados fakes
 - Acr.UserDialogs - para apresentação de mensagens em tela
 - System.Text.Json e Newtonsoft.Json - para geração e tratamento de dados no formato json
+
+[Screenshot-1610345810.png](https://postimg.cc/vgx8Wq3H)
