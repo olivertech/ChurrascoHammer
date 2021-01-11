@@ -2,7 +2,9 @@
 
 Sistema mobible feito em Xamarin.Forms, contendo apenas a plataforma Android. 
 
-Esse sistema foi desenvolvido como um demo, para atender a uma avaliação técnica da empresa Hammer, a respeito dos meus conhecimentos na plataforma Xamarin.Forms.
+Esse sistema foi desenvolvido como um demo, para atender a uma avaliação técnica da empresa Hammer, a respeito dos meus conhecimentos na plataforma Xamarin.Forms. O exercício proposto, visa solucionar o seguinte problema:
+
+"Aqui na Hammer organizamos churrasco periodicamente, é necessario que cada funcionario contribua 20$ e se quiser levar um convidado 40$. O problema é que não temos uma maneira para controlar quem irá no churrasco e quanto foi gasto com comida e bebida. Um funcionário pode levar apenas um convidado,se o colaborador não beber o valor do churrasco será metade,a mesma regra é valida para o convidado. Dado o problema é necessario desenvolver uma aplicação onde podemos controlar a participação e valor que será arrecadado."
 
 O projeto simula o gerenciamento de churrascos, permitindo que sejam cadastrados novos participantes, convidados e gastos.
 
