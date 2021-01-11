@@ -13,9 +13,7 @@ O projeto utiliza as seguintes bibliotecas:
 - Acr.UserDialogs - para apresentação de mensagens em tela
 - System.Text.Json e Newtonsoft.Json - para geração e tratamento de dados no formato json
 
-<a href='https://postimg.cc/vgx8Wq3H' target='_blank'><img src='https://i.postimg.cc/vgx8Wq3H/Screenshot-1610345810.png' border='0' alt='Screenshot-1610345810'/></a>
-
-<a href='https://postimg.cc/jnhpNy0S' target='_blank'><img src='https://i.postimg.cc/jnhpNy0S/Screenshot-1610345837.png' border='0' alt='Screenshot-1610345837'/></a>
+<a href='https://postimg.cc/vgx8Wq3H' target='_blank'><img src='https://i.postimg.cc/vgx8Wq3H/Screenshot-1610345810.png' border='0' alt='Screenshot-1610345810'/></a> <a href='https://postimg.cc/jnhpNy0S' target='_blank'><img src='https://i.postimg.cc/jnhpNy0S/Screenshot-1610345837.png' border='0' alt='Screenshot-1610345837'/></a>
 
 <a href='https://postimg.cc/RNSFYR0G' target='_blank'><img src='https://i.postimg.cc/RNSFYR0G/Screenshot-1610345842.png' border='0' alt='Screenshot-1610345842'/></a>
 
