@@ -23,4 +23,6 @@ O projeto utiliza as seguintes bibliotecas:
 
 [Screenshot-1610345854.png](https://postimg.cc/phMVJQ7f)
 
+[Screenshot-1610345861.png](https://postimg.cc/nsBprjzC)
 
+[Screenshot-1610345868.png](https://postimg.cc/pprv81rN)
