@@ -17,7 +17,7 @@ O projeto utiliza as seguintes bibliotecas:
 
 <a href='https://postimg.cc/jnhpNy0S' target='_blank'><img src='https://i.postimg.cc/jnhpNy0S/Screenshot-1610345837.png' border='0' alt='Screenshot-1610345837'/></a>
 
-[Screenshot-1610345842.png](https://postimg.cc/RNSFYR0G)
+<a href='https://postimg.cc/RNSFYR0G' target='_blank'><img src='https://i.postimg.cc/RNSFYR0G/Screenshot-1610345842.png' border='0' alt='Screenshot-1610345842'/></a>
 
 [Screenshot-1610345850.png](https://postimg.cc/TKhPd3gD)
 
